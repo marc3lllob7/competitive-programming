@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string n;
+    cin >> n;
+    sort(n.begin(), n.end());
+    vector <string> solve;
+    do {
+        solve.push_back(n);
+    } while (next_permutation (n.begin(), n.end()));
+    cout << solve.size() << '\n';
+    for (auto&ans : solve) cout << ans << '\n';
+    return 0;
+}
