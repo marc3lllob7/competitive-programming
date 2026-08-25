@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+ll solve (vector<ll>& v, ll sumG1, ll sumG2, int i, int n){
+    if (i == n) return abs(sumG1 - sumG2);
+    ll inG1 = solve(v, sumG1 + v[i], sumG2, i + 1, n);
+    ll inG2 = solve(v, sumG1, sumG2 + v[i], i + 1, n);
+    return min(inG1, inG2);
+}
+int main(){
+    int n;
+    cin >> n;
+    vector<ll> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+    sort(v.begin(), v.end());
+    ll ans = solve(v, 0, 0, 0, n);
+    cout << ans;
+    return 0;
+}
