@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int ans = 0;
+    string n;
+    cin >> n;
+    sort(n.begin(), n.end());
+    int t = n.size();
+    do {
+        ans++;
+    } while (next_permutation (n.begin(), n.end()));
+    cout << ans << '\n';
+    do {
+        for (int i = 0; i < t; i++)
+            cout << n[i];
+        cout << '\n';
+    } while (next_permutation (n.begin(), n.end()));
+    return 0;
+}
